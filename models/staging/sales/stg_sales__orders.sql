@@ -1,0 +1,12 @@
+SELECT
+    CAST(order_id AS INT64) AS order_id,
+    CAST(customer_id AS INT64) AS customer_id,
+    CASE WHEN order_status = 4 THEN 'shipped'
+        ELSE NULL
+        END AS order_status,
+    CAST(order_date AS DATE) AS order_date,
+    CAST(required_date AS DATE) AS required_date,
+    SAFE_CAST(shipped_date AS DATE) AS shipped_date,
+    CAST(store_id AS INT64) AS store_id,
+    CAST(staff_id AS INT64) AS staff_id
+FROM {{ source('locbike','orders') }} 

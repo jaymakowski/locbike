@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: locbike
+    schema: locbike
+    tables:
+      - name: brands
+      - name: categories
+      - name: customers
+      - name: order_items
+      - name: orders
+      - name: products
+      - name: staff
+      - name: stock
+      - name: stores
