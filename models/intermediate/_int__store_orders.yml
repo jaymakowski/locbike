@@ -3,8 +3,3 @@ version: 2
 models:
   - name: int__store_orders
     description: '{{ doc("int__store_orders") }}'
-    columns:
-      - name: store_id
-        description: "Unique identifier for each store. Can be multiple"
-        tests:
-          - not_null

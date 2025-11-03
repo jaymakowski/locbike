@@ -36,6 +36,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
+  +persist_docs:
+      relation: true
+      columns: true
 
   locbike_capstone:
 
@@ -48,3 +51,6 @@ models:
 
     intermediate:
       materialized: view
+
+    mart:
+      materialized: table

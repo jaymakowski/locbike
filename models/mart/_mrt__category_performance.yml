@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: mrt__category_performance
+    description: '{{ doc("mrt__category_performance") }}'
