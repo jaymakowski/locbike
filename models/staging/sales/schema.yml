@@ -34,7 +34,7 @@ models:
           - relationships:
               name: product_id_foreign_key_in_stg_sales__order_items
               arguments:
-                to: ref('stg_sales__products')
+                to: ref('stg_prod__products')
                 field: product_id
 
   - name: stg_sales__orders

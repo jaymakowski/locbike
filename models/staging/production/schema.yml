@@ -70,5 +70,5 @@ models:
           - relationships:
               name: store_id_foreign_key_in_stg_prod__stock
               arguments:
-                to: ref('stg_sales__store')
+                to: ref('stg_sales__stores')
                 field: store_id
