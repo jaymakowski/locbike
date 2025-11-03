@@ -36,8 +36,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
+
   locbike_capstone:
+
     staging:
       materialized: view
-      stagin:
+      sales:
         schema: stg_sales
+      production:
+        schema: stg_prod
+
+    intermediate:
+      materialized: view
