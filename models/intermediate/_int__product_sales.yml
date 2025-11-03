@@ -2,4 +2,4 @@ version: 2
 
 models:
   - name: int__product_sales
-    description: '{{ doc("int__products_sales") }}'
+    description: '{{ doc("int__product_sales") }}'
