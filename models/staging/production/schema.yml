@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: stg_prod__brands
+    description: "This model contains information about our brands."
+    columns:
+      - name: brand_id
+        description: "Primary key, unique identifier for each brand."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_prod__products
+    description: "This model contains information about products."
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each product."
+        tests:
+          - unique
+          - not_null
+      - name: brand_id
+        description: "Foreign key linking the productto to the corresponding brand."
+        tests:
+          - not_null
+          - relationships:
+              name: brand_id_foreign_key_in_stg_prod__products
+              arguments:
+                to: ref('stg_prod__brands')
+                field: brand_id
+      - name: category_id
+        description: "Foreign key linking the produt to to the corresponding category."
+        tests:
+          - not_null
+          - relationships:
+              name: category_id_foreign_key_in_stg_prod__products
+              arguments:
+                to: ref('stg_prod__categories')
+                field: category_id
+
+  - name: stg_prod__categories
+    description: "This model contains information about the categores"
+    columns:
+      - name: category_id
+        description: "Primary key, unique identifier for each category."
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_prod__stock
+    description: "This model contains information about those stock."
+    columns:
+      - name: stock_id
+        description: "Primary key, unique identifier for stock in each store. Done through combining store_id and product_id"
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        description: "Foreign key linking the stock to to the corresponding product."
+        tests:
+          - not_null
+          - relationships:
+              name: product_id_foreign_key_in_stg_prod__stock
+              arguments:
+                to: ref('stg_prod__products')
+                field: product_id
+      - name: store_id
+        description: "Foreign key linking the stock to to the corresponding store."
+        tests:
+          - not_null
+          - relationships:
+              name: store_id_foreign_key_in_stg_prod__stock
+              arguments:
+                to: ref('stg_sales__store')
+                field: store_id

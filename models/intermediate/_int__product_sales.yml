@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int__product_sales
+    description: '{{ doc("int__products_sales") }}'
+    columns:
+      - name: product_id
+        description: "Unique identifier for each product. Can be multiple"
+        tests:
+          - not_null

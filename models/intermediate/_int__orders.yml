@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: int__orders
+    description: '{{ doc("int__orders") }}'
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order."
+        tests:
+          - not_null
