@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: mrt__brand_performance
+    description: '{{ doc("mrt__brand_performance") }}'
